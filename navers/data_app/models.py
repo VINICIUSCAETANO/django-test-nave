@@ -9,6 +9,7 @@ class User(models.Model):
         ordering = ['email']
 
 class Naver(models.Model):
+    owner = models.ForeignKey('User', on_delete=models.CASCADE)
     name = models.CharField(null=False, blank=False, max_length=50)
     birthdate = models.DateField(null=False, blank=False)
     admission_date = models.DateField(null=False, blank=False)
@@ -17,4 +18,5 @@ class Naver(models.Model):
         ordering = ['name']
 
 class Project(models.Model):
+    owner = models.ForeignKey('Naver', on_delete=models.CASCADE)
     name = models.CharField(null=False, blank=False, max_length=20)
