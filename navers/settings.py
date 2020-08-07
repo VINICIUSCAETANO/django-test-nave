@@ -75,13 +75,15 @@ WSGI_APPLICATION = 'navers.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-     'default': {
+     'sqlite': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     },
-    'postgres': {      
-        'ENGINE': 'django.db.backends.postgresql',    
-        'DATABASE_URL': 'postgres://nlkaqsvttioxxp:76dca17377561126dac1be0c79e3f058dc8e70e047f35874de87c16303bc8215@ec2-54-159-138-67.compute-1.amazonaws.com:5432/dbht58394db4c6' 
+    'default': {      
+        'NAME': 'nave',
+        'ENGINE': 'django.db.backends.postgresql',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres' 
     }
 }
 
